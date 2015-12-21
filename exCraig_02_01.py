@@ -2,7 +2,7 @@
 # Example 2-1.
 # Figure 2.6 shows a frame {B} that is rotated relative to frame {A} about Z by 30 degrees.
 
-from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
 import drawRobotics as dR
 import numpy as np
 
