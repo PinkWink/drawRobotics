@@ -13,6 +13,7 @@ def drawVector(fig, pointA, pointB, **kwargs):
 	projOn = kwargs.get('proj', True)
 	lineStyle = kwargs.get('lineStyle', '-')
 	annotationString = kwargs.get('annotationString', '')
+	lineWidth = kwargs.get('lineWidth', 1)
 
 	if (3 <= pointA.size <= 4):
 		xs = [pointA[0], pointB[0]]
@@ -23,7 +24,7 @@ def drawVector(fig, pointA, pointB, **kwargs):
 		ys = [pointA[1,3], pointB[1,3]]
 		zs = [pointA[2,3], pointB[2,3]]
 
-	out = Arrow3D(xs, ys, zs, mutation_scale=ms, arrowstyle=ars, color=lc, linestyle=lineStyle)
+	out = Arrow3D(xs, ys, zs, mutation_scale=ms, arrowstyle=ars, color=lc, linestyle=lineStyle, linewidth=lineWidth)
 	fig.add_artist(out)
 
 	if pointEnable: fig.scatter(xs[1], ys[1], zs[1], color='k', s=50)
@@ -98,3 +99,9 @@ def RotZ(psi):
     return np.array([[np.cos(psi), 	-np.sin(psi), 	0],
                      [np.sin(psi), 	np.cos(psi), 	0],
                      [0, 			0, 				1]])
+
+def D_q(dx, dy, dz):
+	return np.array([[1, 0, 0, dx],
+					 [0, 1, 0, dy],
+					 [0, 0, 1, dz],
+					 [0, 0, 0, 1]])
