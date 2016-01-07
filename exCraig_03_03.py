@@ -8,10 +8,7 @@ axcolor = 'lightgoldenrodyellow'
 L1 = 1.5
 L2 = 1.5
 
-ORG_0 = np.array([[1,0,0,0],
-				[0,1,0,0],
-				[0,0,1,0],
-				[0,0,0,1]])
+ORG_0 = np.array([[1,0,0,0], [0,1,0,0], [0,0,1,0], [0,0,0,1]])
 
 def calcORGs(a1, a2, a3):
 	th1 = dR.conv2Rad(a1)

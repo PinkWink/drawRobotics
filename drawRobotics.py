@@ -43,6 +43,7 @@ def drawPointWithAxis(fig, *args, **kwargs):
 	pointEnable = kwargs.get('pointEnable', True)
 	axisEnable = kwargs.get('axisEnable', True)
 	lineStyle = kwargs.get('lineStyle', '-')
+	lineWidth = kwargs.get('lineWidth', 1)
 	vectorLength = kwargs.get('vectorLength', 1)
 
 	if len(args) == 4:
@@ -78,9 +79,9 @@ def drawPointWithAxis(fig, *args, **kwargs):
 	if pointEnable: fig.scatter(xs_n[0], ys_n[0], zs_n[0], color='k', s=50)
 
 	if axisEnable:
-		n = Arrow3D(xs_n, ys_n, zs_n, mutation_scale=ms, arrowstyle=ars, color='r', linestyle=lineStyle)
-		o = Arrow3D(xs_o, ys_o, zs_o, mutation_scale=ms, arrowstyle=ars, color='g', linestyle=lineStyle)
-		a = Arrow3D(xs_a, ys_a, zs_a, mutation_scale=ms, arrowstyle=ars, color='b', linestyle=lineStyle)
+		n = Arrow3D(xs_n, ys_n, zs_n, mutation_scale=ms, arrowstyle=ars, color='r', linestyle=lineStyle, linewidth=lineWidth)
+		o = Arrow3D(xs_o, ys_o, zs_o, mutation_scale=ms, arrowstyle=ars, color='g', linestyle=lineStyle, linewidth=lineWidth)
+		a = Arrow3D(xs_a, ys_a, zs_a, mutation_scale=ms, arrowstyle=ars, color='b', linestyle=lineStyle, linewidth=lineWidth)
 		fig.add_artist(n)
 		fig.add_artist(o)
 		fig.add_artist(a)
