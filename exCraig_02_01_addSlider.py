@@ -35,7 +35,7 @@ fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 plt.subplots_adjust(bottom=0.25)
 
-axAngle = plt.axes([0.125, 0.15, 0.77, 0.03], axisbg=axcolor)
+axAngle = plt.axes([0.125, 0.15, 0.77, 0.03], facecolor=axcolor)
 sAngle = Slider(axAngle, 'Angle', -90.0, 90.0, valinit=initAngle)
 
 dR.drawPointWithAxis(ax, AORG, hat_X_atA, hat_Y_atA, hat_Z_atA, pointEnable=False)
